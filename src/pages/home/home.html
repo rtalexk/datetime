@@ -1,0 +1,36 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			Datetime validation
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<div [formGroup]='datetime'>
+		<ion-list>
+			 <ion-item>
+				<ion-label>Fecha nac.</ion-label>
+				<ion-datetime [(ngModel)]='user.birth' 
+					displayFormat="MM/DD/YYYY" 
+					pickerFormat="MM DD YYYY" 
+					placeholder='select a date'
+					formControlName='birth'
+					(ionCancel)='onDatetimeCancel()'></ion-datetime> 
+			 </ion-item>
+			 <div class="paddingLeft" *ngIf='(submit || dateError) && datetime.controls.birth.invalid'>
+				<div class="errorContainer">
+					<p class="errorMessage">
+						Fecha de nacimieno no válida
+					</p>
+				</div>
+			</div>
+		</ion-list>
+	</div>
+
+	<ion-fab bottom right>
+		<button ion-fab (click)="sendData()">
+			<ion-icon name='send'></ion-icon>
+		</button>
+	</ion-fab>
+</ion-content>

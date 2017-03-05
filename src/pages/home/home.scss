@@ -1,0 +1,18 @@
+page-home {
+    .paddingLeft {
+        padding-left: 16px;
+        height: 3em;
+
+        .errorContainer {
+            height: 100%;
+            width: 100%;
+            border: 1px solid red;
+            border-radius: 10px;
+        }
+    }
+
+    .errorMessage {
+        color: red;
+        text-align: center;
+    }
+}
